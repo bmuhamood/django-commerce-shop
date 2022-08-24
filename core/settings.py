@@ -3,11 +3,11 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure--$gt&ls!0=!@c8+$k(tq7$ak(qpu#_k5q(fd8j-1$zu6mp$)4l'
+SECRET_KEY = '3xk*)i0x#k$btl=(6q)te!19=mp6d)lm1+zl#ts4ewxi3-!vm_'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1']
+ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -53,14 +54,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -77,29 +76,38 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_L10N = True
 
+USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_DIR = [
-    os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
 ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Basket session ID
+BASKET_SESSION_ID = 'basket'
 
-#custom user model
+# Stripe Payment
+# PUBLISHABLE_KEY = ''
+# SECRET_KEY = ''
+# STRIPE_ENDPOINT_SECRET = ''
+# stripe listen --forward-to localhost:8000/payment/webhook/
+
+# Custom user model
 AUTH_USER_MODEL = 'account.UserBase'
-LOGIN_REDIRECT_URL = '/account/dashboard/'
-LOGOUT_REDIRECT_URL = '/account/login/'
+LOGIN_REDIRECT_URL = '/account/dashboard'
+LOGIN_URL = '/account/login/'
 
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
