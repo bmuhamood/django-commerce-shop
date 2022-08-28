@@ -3,7 +3,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '3xk*)i0x#k$btl=(6q)te!19=mp6d)lm1+zl#ts4ewxi3-!vm_'
+SECRET_KEY = '$mv9a_)qa)osf2ua_l_&tp1kl2+wwf0866u)y^xc+#!4#1k#am'
 
 DEBUG = True
 
@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
+    'payment',
     'orders',
 ]
 
@@ -99,9 +100,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 BASKET_SESSION_ID = 'basket'
 
 # Stripe Payment
-# PUBLISHABLE_KEY = ''
-# SECRET_KEY = ''
-# STRIPE_ENDPOINT_SECRET = ''
+PUBLISHABLE_KEY = 'pk_test_51LaK0qKnMqatNE9EQ2Zq1knzNTZTF3kxJEM1jgIAAistHJhAIRnh11tirHEFSXjBJldCVtM5qktptTS2WZnnAivV00XdqVVhhr'
+SECRET_KEY = 'sk_test_51LaK0qKnMqatNE9ElbejyQYX7TqRYnr4t0qBISQqKuufolJTZ372VSlHwjfNXRtxW7t3aPiBnGiD73q3lkGdlMpg008AbJjVjH'
+STRIPE_ENDPOINT_SECRET = 'whsec_4a7c906142e54b20ac80e9ff189c425d8a153575412147e0aea3ec98449bac44'
 # stripe listen --forward-to localhost:8000/payment/webhook/
 
 # Custom user model
