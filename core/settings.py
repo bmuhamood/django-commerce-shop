@@ -100,9 +100,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 BASKET_SESSION_ID = 'basket'
 
 # Stripe Payment
-PUBLISHABLE_KEY = 'pk_test_51LaK0qKnMqatNE9EQ2Zq1knzNTZTF3kxJEM1jgIAAistHJhAIRnh11tirHEFSXjBJldCVtM5qktptTS2WZnnAivV00XdqVVhhr'
-SECRET_KEY = 'sk_test_51LaK0qKnMqatNE9ElbejyQYX7TqRYnr4t0qBISQqKuufolJTZ372VSlHwjfNXRtxW7t3aPiBnGiD73q3lkGdlMpg008AbJjVjH'
-STRIPE_ENDPOINT_SECRET = 'whsec_4a7c906142e54b20ac80e9ff189c425d8a153575412147e0aea3ec98449bac44'
+os.environ.setdefault('STRIPE_PUBLISHABLE_KEY','pk_test_51LaK0qKnMqatNE9EQ2Zq1knzNTZTF3kxJEM1jgIAAistHJhAIRnh11tirHEFSXjBJldCVtM5qktptTS2WZnnAivV00XdqVVhhr')
+STRIPE_SECRET_KEY = 'sk_test_51LaK0qKnMqatNE9ElbejyQYX7TqRYnr4t0qBISQqKuufolJTZ372VSlHwjfNXRtxW7t3aPiBnGiD73q3lkGdlMpg008AbJjVjH'
+# STRIPE_ENDPOINT_SECRET = 'whsec_4a7c906142e54b20ac80e9ff189c425d8a153575412147e0aea3ec98449bac44'
 # stripe listen --forward-to localhost:8000/payment/webhook/
 
 # Custom user model
